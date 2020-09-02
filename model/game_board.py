@@ -28,10 +28,12 @@ class GameBoard(object):
         strike = self.attack_duration
         while True:
             if strike > attacker.weapon.attack_speed:
-                logger.info('Character {} attacked {}!!'.format(attacker.name, defender.name))
+                logger.info('Character {} moved and attacked {}!!'.format(attacker.name, defender.name))
+                attacker.position = random.randrange(0, 10), random.randrange(0, 10), random.randrange(0, 10)
+                self.calculate_strike_distance(attacker, defender)
                 defender.health = defender.health - attacker.weapon.attack_amount
                 logger.info('Defender {} has {} health left!'.format(defender.name, defender.health))
-                if defender.health < 0:
+                if defender.health < 1:
                     self.delete_character_to_board(defender)
                     return
                 strike = strike - attacker.weapon.attack_speed
@@ -42,7 +44,7 @@ class GameBoard(object):
     def print_board(self):
         logger.info('The characters left on the board are:')
 
-    # TODO Euclidean distance from attacker to defender:
+    # TODO Euclidean distance from attacker to defender - Move Characters Around the board
     def calculate_strike_distance(self, attacker, defender):
         distance = math.sqrt(sum([(a - b) ** 2 for a, b in zip(attacker.position, defender.position)]))
-        logger.info("Distance from attacker to defender is: ", distance)
+        logger.info("Distance from attacker to defender is: {}".format(distance))

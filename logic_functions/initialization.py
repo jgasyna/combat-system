@@ -12,5 +12,5 @@ def build_random_character():
 
     weapon = Weapon('weapon_' + weapon_name_str, random.randint(1, 10), random.randint(1, 10))
 
-    return Character('player_' + player_name_str,  random.randint(10, 100), weapon)
+    return Character('player_' + player_name_str,  random.randint(10, 100), weapon, (random.randrange(0, 10), random.randrange(0, 10), random.randrange(0, 10)))
 

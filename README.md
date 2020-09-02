@@ -15,7 +15,7 @@ python game_play.py
 ####Dockerized:   If you have docker installed.
 
 ```bash
-docker-compose up
+docker-compose up --build
 ```
 
 ####Virtual ENV  (Not currently supported)

@@ -9,8 +9,6 @@ if __name__ == "__main__":
     logging.info('<--------- STARTING COMBAT SYSTEM PLAY -------- >')
     logging.info('Initializing characters....')
 
-
-
     character_a = build_random_character()
     character_a.display_character()
     character_b = build_random_character()
