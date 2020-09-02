@@ -6,16 +6,16 @@ This project contains source code for an automated combat game.  It could be mod
 
 Currently there are no dependencies.  It can be deployed a number of ways.  
 
-####Regular old Python script:  Python 3
+#### Regular old Python script:  Python 3
 ```bash
 pip3 install -r requirements.txt
 python game_play.py
 ```
 
-####Dockerized:   If you have docker installed.
+#### Dockerized:   If you have docker installed.
 
 ```bash
 docker-compose up --build
 ```
 
-####Virtual ENV  (Not currently supported)
+#### Virtual ENV  (Not currently supported)
